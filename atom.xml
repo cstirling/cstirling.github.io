@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cstirling.github.io/"/>
-  <updated>2020-01-04T09:28:38.000Z</updated>
+  <updated>2020-01-06T08:18:54.981Z</updated>
   <id>https://cstirling.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>二零一七年终总结</title>
-    <link href="https://cstirling.github.io/2018/01/22/2017-conclusion/"/>
-    <id>https://cstirling.github.io/2018/01/22/2017-conclusion/</id>
-    <published>2018-01-22T04:32:09.000Z</published>
-    <updated>2020-01-04T09:28:38.000Z</updated>
+    <title>动态规划训练</title>
+    <link href="https://cstirling.github.io/2020/01/06/dp-train/"/>
+    <id>https://cstirling.github.io/2020/01/06/dp-train/</id>
+    <published>2020-01-06T07:06:56.088Z</published>
+    <updated>2020-01-06T08:18:54.981Z</updated>
     
     <summary type="html">
     
@@ -29,16 +29,16 @@
       
         
         
-          &lt;div align=&quot;middle&quot;&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot;
+          &lt;h1 id=&quot;取数字1&quot;&gt;&lt;a href=&quot;#取数字1&quot; class=&quot;headerlink&quot; title=&quot;取数字1&quot;&gt;&lt;/a&gt;取数字1&lt;/h1&gt;&lt;h2 id=&quot;来源&quot;&gt;&lt;a href=&quot;#来源&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="随笔" scheme="https://cstirling.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="算法" scheme="https://cstirling.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="随笔" scheme="https://cstirling.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="动态规划" scheme="https://cstirling.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
