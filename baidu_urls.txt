@@ -1,1 +1,2 @@
+https://cstirling.github.io/2020/01/10/kaldi-data-prep/
 https://cstirling.github.io/2020/01/06/dp-train/
