@@ -225,7 +225,7 @@ text每行为每段语音的标注，第一项是发">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -392,7 +392,7 @@ text每行为每段语音的标注，第一项是发">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    873
+                    879
                 </div>
                 
 
@@ -413,46 +413,46 @@ text每行为每段语音的标注，第一项是发">
                 <p>kaldi的数据准备主要分成两种，数据（data）部分和语言（lang）部分</p>
 <h1 id="数据部分"><a href="#数据部分" class="headerlink" title="数据部分"></a>数据部分</h1><h2 id="需要手动创建的文件"><a href="#需要手动创建的文件" class="headerlink" title="需要手动创建的文件"></a>需要手动创建的文件</h2><p>下列文件均放在data/{train,dev,test}目录中，未标注可选的文件为必须要创建的</p>
 <h3 id="text"><a href="#text" class="headerlink" title="text"></a>text</h3><p>每行为每段语音的标注，第一项是<strong>发音编号（utterance-id）</strong>，第二项为<strong>语音标注</strong>，包括以下文件都要遵循按照发音编号<strong>从小到大每行排序</strong>的规则</p>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110202538647.png" alt="image-20200110202538647"></p>
+<p><img src="0.png" alt></p>
 <h3 id="wav-scp"><a href="#wav-scp" class="headerlink" title="wav.scp"></a>wav.scp</h3><p>每行为每段语音录音的存放地址，第一项是<strong>录音编号（recording-id）</strong>，第二项为<strong>录音文件所在目录</strong></p>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110202705205.png" alt="image-20200110202705205"></p>
+<p><img src="1.png" alt></p>
 <h3 id="segments（可选）"><a href="#segments（可选）" class="headerlink" title="segments（可选）"></a>segments（可选）</h3><p>如果若干语音是由同一个音频文件分割而来，需要用segments文件来存储分割信息，第一项为<strong>发音编号</strong>，第二项为<strong>录音编号</strong>，第三项为<strong>起始时间</strong>，第四项为<strong>终止时间</strong>，都是以秒为单位的</p>
 <p><strong>重要</strong>：发音编号的文件名可以以<strong>说话人编号-录音编号-起始时间-终止时间</strong>命名 <del>（后悔自己瞎起名字了</del></p>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110202909799.png" alt="image-20200110202909799"></p>
+<p><img src="2.png" alt></p>
 <h3 id="utt2spk"><a href="#utt2spk" class="headerlink" title="utt2spk"></a>utt2spk</h3><p>第一项为<strong>发音编号</strong>，第二项为<strong>说话人编号</strong></p>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110204031333.png" alt="image-20200110204031333"></p>
+<p><img src="3.png" alt></p>
 <h2 id="不需要手动创建的文件"><a href="#不需要手动创建的文件" class="headerlink" title="不需要手动创建的文件"></a>不需要手动创建的文件</h2><h3 id="spk2utt"><a href="#spk2utt" class="headerlink" title="spk2utt"></a>spk2utt</h3><p>第一项为<strong>说话人编号</strong>，第二到N项为<strong>发音编号</strong></p>
 <p>可以由以下命令创建该文件： </p>
 <pre class="line-numbers language-powershell"><code class="language-powershell">utils<span class="token operator">/</span>utt2spk_to_spk2utt<span class="token punctuation">.</span>pl <span class="token keyword">data</span><span class="token operator">/</span>train<span class="token operator">/</span>utt2spk > <span class="token keyword">data</span><span class="token operator">/</span>train<span class="token operator">/</span>spk2utt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110204157960.png" alt="image-20200110204157960"></p>
+<p><img src="4.png" alt></p>
 <h3 id="feats-scp"><a href="#feats-scp" class="headerlink" title="feats.scp"></a>feats.scp</h3><p>此文件指向已经提取好的特征，一般为MFCC</p>
 <p>第一项为<strong>发音编号</strong>，第二项为<strong>特征文件名</strong></p>
 <p>可以由以下命令创建该文件： </p>
 <pre class="line-numbers language-powershell"><code class="language-powershell">steps<span class="token operator">/</span>make_mfcc<span class="token punctuation">.</span>sh <span class="token operator">--</span>nj 20 <span class="token operator">--</span>cmd <span class="token string">"<span class="token variable">$train_cmd</span>"</span> <span class="token keyword">data</span><span class="token operator">/</span>train exp<span class="token operator">/</span>make_mfcc<span class="token operator">/</span>train <span class="token variable">$mfccdir</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>$mfccdir 是.ark 文件将被写入的目录，由用户自定义</p>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110204651067.png" alt="image-20200110204651067"></p>
+<p><img src="5.png" alt></p>
 <h3 id="cmvn-scp"><a href="#cmvn-scp" class="headerlink" title="cmvn.scp"></a>cmvn.scp</h3><p>该文件包含了倒谱均值和方差归一化的统计量</p>
 <p>第一项为<strong>说话人编号</strong>，第二项为<strong>特征文件名</strong></p>
 <p>可以由以下命令创建该文件：</p>
 <pre class="line-numbers language-powershell"><code class="language-powershell">steps<span class="token operator">/</span>compute_cmvn_stats<span class="token punctuation">.</span>sh <span class="token keyword">data</span><span class="token operator">/</span>train exp<span class="token operator">/</span>make_mfcc<span class="token operator">/</span>train <span class="token variable">$mfccdir</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110205404666.png" alt="image-20200110205404666"></p>
+<p><img src="6.png" alt></p>
 <h2 id="验证数据目录的文件格式"><a href="#验证数据目录的文件格式" class="headerlink" title="验证数据目录的文件格式"></a>验证数据目录的文件格式</h2><pre class="line-numbers language-powershell"><code class="language-powershell">utils<span class="token operator">/</span>validate_data_dir<span class="token punctuation">.</span>sh <span class="token keyword">data</span><span class="token operator">/</span>train<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1 id="语言部分"><a href="#语言部分" class="headerlink" title="语言部分"></a>语言部分</h1><p>目标是为了创建”lang“目录，可以用以下命令</p>
 <pre class="line-numbers language-powershell"><code class="language-powershell">utils<span class="token operator">/</span>prepare_lang<span class="token punctuation">.</span>sh <span class="token keyword">data</span><span class="token operator">/</span>local<span class="token operator">/</span>dict <span class="token string">"&lt;UNK>"</span> <span class="token keyword">data</span><span class="token operator">/</span>local<span class="token operator">/</span>lang <span class="token keyword">data</span><span class="token operator">/</span>lang<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>输入目录是 data/local/dict/，<unk>需要在字典中，是标注中所有 OOV 词的映射词（映射情况会写入 data/lang/oov.txt 中）。data/local/lang/只是脚本使用的一个临时目录，data/lang/才是输出文件将会写入的地方</unk></p>
+<p>输入目录是 data/local/dict/，&lt;UNK&gt;需要在字典中，是标注中所有 OOV 词的映射词（映射情况会写入 data/lang/oov.txt 中）。data/local/lang/只是脚本使用的一个临时目录，data/lang/才是输出文件将会写入的地方</p>
 <p>因此目标要创建data/local/dict/目录，并在此文件夹中包含如下文件</p>
 <h2 id="需要手动创建的文件-1"><a href="#需要手动创建的文件-1" class="headerlink" title="需要手动创建的文件"></a>需要手动创建的文件</h2><h3 id="silence-phones-txt"><a href="#silence-phones-txt" class="headerlink" title="silence_phones.txt"></a>silence_phones.txt</h3><p>每行包含一个“静音”因素</p>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110210359986.png" alt="image-20200110210359986"></p>
+<p><img src="7.png" alt></p>
 <h3 id="optional-silence-txt"><a href="#optional-silence-txt" class="headerlink" title="optional_silence.txt"></a>optional_silence.txt</h3><p>同上silence_phones.txt完全一致即可</p>
 <h3 id="nonsilence-phones-txt"><a href="#nonsilence-phones-txt" class="headerlink" title="nonsilence_phones.txt"></a>nonsilence_phones.txt</h3><p>此文件为音素表，每行存储”真正的“音素，如果有多重发音，则写在一行</p>
 <p>可以从链接中获取并魔改<a href="http://svn.code.sf.net/p/cmusphinx/code/trunk/cmudict/cmudict-0.7b.symbols" target="_blank" rel="noopener">http://svn.code.sf.net/p/cmusphinx/code/trunk/cmudict/cmudict-0.7b.symbols</a></p>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110210702460.png" alt="image-20200110210702460"></p>
+<p><img src="8.png" alt></p>
 <h3 id="lexicon-txt"><a href="#lexicon-txt" class="headerlink" title="lexicon.txt"></a>lexicon.txt</h3><p>此文件为单词表，每行存储每个单词对应的音素</p>
 <p>可以从链接中获取<a href="http://svn.code.sf.net/p/cmusphinx/code/trunk/cmudict/cmudict-0.7b" target="_blank" rel="noopener">http://svn.code.sf.net/p/cmusphinx/code/trunk/cmudict/cmudict-0.7b</a></p>
-<p>最好在起始加上<unk></unk></p>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110211022376.png" alt="image-20200110211022376"></p>
+<p>最好在起始加上&lt;UNK&gt;</p>
+<p><img src="9.png" alt></p>
 <h3 id="extra-questions-txt"><a href="#extra-questions-txt" class="headerlink" title="extra_questions.txt"></a>extra_questions.txt</h3><p>包含所有音素，仿照截图魔改</p>
-<p><img src="C:%5CUsers%5Cpan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200110211139119.png" alt="image-20200110211139119"></p>
+<p><img src="10.png" alt></p>
 <h2 id="不需要手动创建的文件-1"><a href="#不需要手动创建的文件-1" class="headerlink" title="不需要手动创建的文件"></a>不需要手动创建的文件</h2><h3 id="G-fst"><a href="#G-fst" class="headerlink" title="G.fst"></a>G.fst</h3><p>在创建完lang目录后，并没有生成G.fst，此文件为语法模型的有限状态机格式的表示，解码时需要它</p>
 <p>在测试中，对于不同的语言模型和字典，会需要“lang”目录，有不同的生成G.fst的步骤，可以参考timit_format_data.sh中的写法</p>
 
@@ -664,7 +664,7 @@ text每行为每段语音的标注，第一项是发">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="kaldi的数据准备">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="kaldi的数据准备">
                         
                         <span class="card-title">kaldi的数据准备</span>
                     </div>
@@ -726,7 +726,7 @@ text每行为每段语音的标注，第一项是发">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="动态规划训练">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="动态规划训练">
                         
                         <span class="card-title">动态规划训练</span>
                     </div>
