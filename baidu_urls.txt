@@ -1,2 +1,3 @@
-https://cstirling.github.io/2020/01/10/kaldi-data-prep/
-https://cstirling.github.io/2020/01/06/dp-train/
+https://cstirling.github.io/2021/03/09/ren-gong-zhi-neng-chuang-xin-xiang-mu-shen-bao-shu/index/
+https://cstirling.github.io/2021/03/09/ren-gong-zhi-neng-chuang-xin-xiang-mu-shen-bao-shu/
+https://cstirling.github.io/2020/08/12/kaldi-data-prep/
