@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>潘凌超的博客</title>
+  <title>cstirling的博客</title>
   
   <subtitle>cstirling</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://cstirling.github.io/</id>
   
   <author>
-    <name>潘凌超</name>
+    <name>cstirling</name>
     
   </author>
   
